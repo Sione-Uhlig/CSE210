@@ -45,7 +45,7 @@ class Program
 
         else 
         {
-            Console.WriteLine("you will need to try again next semester. \n");
+            Console.WriteLine("You will need to try again next semester. \n");
         }
 
     }
