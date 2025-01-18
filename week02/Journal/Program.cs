@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 
+// I implemented a feature to delete entries, allowing users to remove any entries they are dissatisfied with or wish to revise.
+
+
 class Program
 {
     static void Main(string[] args)
