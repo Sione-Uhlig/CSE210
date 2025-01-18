@@ -1,9 +1,14 @@
 using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 class Journal
 {
-    static void Main(string[] args)
+    public void DisplayMenu()
     {
-        Console.WriteLine("Hello World! This is the Journal Project.");
+        Console.WriteLine("Please select one of the following choices: ");
+        Console.WriteLine("1. Write\n2. Display\n3. Load\n4. Save\n5. Quit");
+        Console.Write("What would you like to do? ");
     }
+    
 }
