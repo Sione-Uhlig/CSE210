@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 class PromptGenerators
 {
@@ -6,20 +7,26 @@ class PromptGenerators
 
    public PromptGenerators()
    {
-        Prompts.Add("Who was the most interesting person I interacted with today?\n");
-        Prompts.Add("What was the best part of my day?\n");
-        Prompts.Add("How did I see the hand of the Lord in my life today?\n");
-        Prompts.Add("What was the strongest emotion I felt today?\n");
-        Prompts.Add("If I had one thing I could do over today, what would it be?\n");
+        Prompts.Add("Who was the most interesting person I interacted with today?");
+        Prompts.Add("What was the best part of my day?");
+        Prompts.Add("How did I see the hand of the Lord in my life today?");
+        Prompts.Add("What was the strongest emotion I felt today?");
+        Prompts.Add("If I had one thing I could do over today, what would it be?");
    }
 
-   public void DisplayRandomPrompt()
+   public string GetRandomPrompt()
    {
     Random RandomPrompt = new Random();
 
     int randomIndex = RandomPrompt.Next(Prompts.Count);
 
-    Console.WriteLine(Prompts[randomIndex]);
+    return Prompts[randomIndex];
+   }
+
+   public void DisplayRandomPrompt()
+   {
+      string prompt = GetRandomPrompt();
+      Console.WriteLine(prompt);
    }
 
 
