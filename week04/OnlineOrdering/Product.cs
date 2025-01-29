@@ -23,6 +23,6 @@ class Product
 
     public string PackingLabel()
     {
-        return $"{_productName} Id: {_productId}";
+        return $"{_productName} Id: {_productId} Quantity: {_quantity}";
     }
 }

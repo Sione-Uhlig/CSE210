@@ -22,9 +22,14 @@ class Video
         _comments.Add(comments);
     }
 
+    public int CommentCount()
+    {
+        return _comments.Count;
+    }
+
     public override string ToString()
     {
-        string videoInfo = $"Title: {Title}\nAuthor: {Author}\nLength: {Length} seconds\n";
+        string videoInfo = $"\nTitle: {Title}\nAuthor: {Author}\nLength: {Length} seconds\nComments: {CommentCount()}\n";
         string commentsContent = string.Join("\n",_comments);
         
         return $"{videoInfo}\n{commentsContent}";
