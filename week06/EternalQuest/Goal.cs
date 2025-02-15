@@ -16,5 +16,13 @@ public abstract class Goal
     public abstract void RecordEvent();
     public abstract bool IsComplete();
 
-    public string GetDetailsString
+    public string GetDetailsString()
+    {
+        return $"{_shortName} - {_description}"; 
+    }
+
+    public string GetStringRepresentation()
+    {
+        return $"{GetType().Name}|{_shortName}|{_description}|{_points}";
+    }
 }
