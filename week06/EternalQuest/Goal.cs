@@ -2,9 +2,9 @@ using System;
 
 public abstract class Goal 
 {
-    protected string _shortName;
-    protected string _description;
-    protected int _points;
+    public string _shortName;
+    public string _description;
+    public int _points;
 
     public Goal(string name, string desc, int points)
     {
@@ -16,12 +16,13 @@ public abstract class Goal
     public abstract void RecordEvent();
     public abstract bool IsComplete();
 
-    public string GetDetailsString()
+    public virtual string GetDetailsString()
     {
-        return $"{_shortName} - {_description}"; 
+        string status = IsComplete() ? "[X]" : "[ ]";
+        return $"{status} {_shortName} - ({_description}) for {_points} points.";
     }
 
-    public string GetStringRepresentation()
+    public virtual string GetStringRepresentation()
     {
         return $"{GetType().Name}|{_shortName}|{_description}|{_points}";
     }
