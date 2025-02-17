@@ -8,6 +8,7 @@ class Program
         List<Activity> activities = new List<Activity>
         {
             new Running("03 Nov 2022", 30, 3.0),
+            new Cycling("03 Nov 2022", 30, 15)
         };
 
         foreach (Activity activity in activities)

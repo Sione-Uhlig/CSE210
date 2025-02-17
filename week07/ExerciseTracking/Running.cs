@@ -22,7 +22,7 @@ public class Running : Activity
 
     public override string GetSummary()
     {
-        return $"{GetDate()} Running ({GetMinutes()} min) - Distance {_distance:F1} miles, Speed: {GetSpeed():F1} mph, " +
+        return $"\n{GetDate()} Running ({GetMinutes()} min) - Distance {_distance:F1} miles, Speed: {GetSpeed():F1} mph, " +
         $"Pace: {GetPace():F2} min per mile";
     }
 }
