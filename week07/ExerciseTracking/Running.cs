@@ -9,20 +9,25 @@ public class Running : Activity
         _distance = distance;
     
     }
+    
 
-    private double GetSpeed()
+    protected override double GetDistance()
+    {
+        return _distance;
+    }
+
+    protected override double GetSpeed()
     {
         return (_distance / GetMinutes()) * 60;
     }
 
-    private double GetPace()
+    protected override double GetPace()
     {
-        return GetMinutes() / _distance; 
+        return GetMinutes() / GetDistance(); 
     }
 
     public override string GetSummary()
     {
-        return $"\n{GetDate()} Running ({GetMinutes()} min) - Distance {_distance:F1} miles, Speed: {GetSpeed():F1} mph, " +
-        $"Pace: {GetPace():F2} min per mile";
+        return $"\n{GetDate()} Running {base.GetSummary()}";
     }
 }

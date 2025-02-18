@@ -8,21 +8,26 @@ public class Cycling : Activity
     {
         _speed = speed;
     }
-
-    private double GetDistance()
+     protected override double GetSpeed()
     {
-        return (_speed * GetMinutes()) / 60;
+        return _speed;
     }
 
-    private double GetPace()
+    protected override double GetDistance()
     {
-        return 60 / _speed;
+        return (GetSpeed() * GetMinutes()) / 60;
+    }
+
+    
+
+    protected override double GetPace()
+    {
+        return 60 / GetSpeed();
     }
 
     public override string GetSummary()
     {
-       return $"{GetDate()} Cycling ({GetMinutes()} min) - Distance {GetDistance():F1} miles, Speed: {_speed:F1} mph, " +
-        $"Pace: {GetPace():F2} min per mile";
+       return $"{GetDate()} Cycling {base.GetSummary()}";
     }
 }
 

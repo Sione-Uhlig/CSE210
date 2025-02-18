@@ -22,6 +22,13 @@ public abstract class Activity
         return _date;
     }
 
-    public abstract string GetSummary();
+    protected abstract double GetDistance();
+    protected abstract double GetSpeed();
+    protected abstract double GetPace();
 
+    public virtual string GetSummary()
+    {
+        return $"({GetMinutes()} min) - Distance {GetDistance():F1} miles, Speed: {GetSpeed():F1} mph, " +
+               $"Pace: {GetPace():F2} min per mile";
+    }
 }
